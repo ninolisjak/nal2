@@ -1,11 +1,13 @@
-name: Run all PHPUnit tests
+name: test
 
 on:
   push:
+    branches: [ "main" ]
   pull_request:
+    branches: [ "main" ]
 
 jobs:
-  test:
+  php-tests:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,30 +18,14 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-          extensions: mbstring, intl, pdo, mysql
           coverage: none
 
-      - name: Install PHPUnit manually
+      - name: Install dependencies
         run: |
-          wget https://phar.phpunit.de/phpunit-9.6.phar -O phpunit
-          chmod +x phpunit
-          ./phpunit --version
-
-      - name: Show current directory structure (debug)
-        run: |
-          echo "Current directory:"
-          pwd
-          echo "List of files:"
-          ls -R
+          cd nal2
+          composer install --no-interaction --prefer-dist
 
       - name: Run PHPUnit tests
         run: |
-          if [ -d "tests" ]; then
-            ./phpunit tests
-          elif [ -d "MovieTickets/tests" ]; then
-            cd MovieTickets
-            ../phpunit tests
-          else
-            echo "❌ Tests folder not found"
-            exit 1
-          fi
+          cd nal2
+          vendor/bin/phpunit --testdox tests
