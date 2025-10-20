@@ -1,42 +1,37 @@
 <?php
 use PHPUnit\Framework\TestCase;
 
-/**
- * MovieTicketsTest
- * ----------------
- * Datoteka vsebuje 5 funkcij in njihove unit teste.
- * Vsak test ima tri primere (pozitivni, negativni, robni).
- */
+
 class MovieTicketsTest extends TestCase
 {
     /* =====================================================
      * FUNKCIJE ZA TESTIRANJE
      * ===================================================== */
 
-    // 1️⃣ Preveri veljavnost e-poštnega naslova
+    // 1️ Preveri veljavnost e-poštnega naslova
     public function validateEmail($email) {
         return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
     }
 
-    // 2️⃣ Izračuna skupno ceno vstopnic
+    // 2️ Izračuna skupno ceno vstopnic
     public function calculateTicketPrice($numTickets, $basePrice) {
         if ($numTickets < 0 || $basePrice < 0) return false;
         return $numTickets * $basePrice;
     }
 
-    // 3️⃣ Preveri razpoložljivost sedežev
+    // 3️ Preveri razpoložljivost sedežev
     public function checkSeatAvailability($requested, $available) {
         if ($requested <= 0 || $available < 0) return false;
         return $requested <= $available;
     }
 
-    // 4️⃣ Formatira naslov filma
+    // 4️ Formatira naslov filma
     public function formatMovieTitle($title) {
         if (empty($title)) return "";
         return ucwords(strtolower(trim($title)));
     }
 
-    // 5️⃣ Izračuna končno ceno s popustom
+    // 5️ Izračuna končno ceno s popustom
     public function calculateDiscount($price, $discountPercent) {
         if ($price < 0 || $discountPercent < 0 || $discountPercent > 100) return false;
         return $price - ($price * ($discountPercent / 100));
