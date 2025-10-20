@@ -28,4 +28,6 @@ jobs:
       - name: Run PHPUnit tests
         run: |
           cd nal2
+          chmod +x vendor/bin/phpunit
           vendor/bin/phpunit --testdox tests
+
