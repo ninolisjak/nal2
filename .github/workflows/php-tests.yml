@@ -19,8 +19,11 @@ jobs:
           extensions: mbstring, intl, pdo, mysql
           coverage: none
 
-      - name: Install dependencies
-        run: composer install
+      - name: Install PHPUnit manually
+        run: |
+          wget https://phar.phpunit.de/phpunit-9.6.phar -O phpunit
+          chmod +x phpunit
+          ./phpunit --version
 
       - name: Run PHPUnit tests
-        run: vendor/bin/phpunit tests
+        run: ./phpunit tests
