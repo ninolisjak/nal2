@@ -25,5 +25,21 @@ jobs:
           chmod +x phpunit
           ./phpunit --version
 
+      - name: Show current directory structure (debug)
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "List of files:"
+          ls -R
+
       - name: Run PHPUnit tests
-        run: ./phpunit tests
+        run: |
+          if [ -d "tests" ]; then
+            ./phpunit tests
+          elif [ -d "MovieTickets/tests" ]; then
+            cd MovieTickets
+            ../phpunit tests
+          else
+            echo "❌ Tests folder not found"
+            exit 1
+          fi
