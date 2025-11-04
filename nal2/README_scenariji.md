@@ -21,11 +21,11 @@
 - Prikaže se sporočilo o uspešni registraciji  
 - Uporabnik je po prijavi preusmerjen na začetno stran z vidnim profilom  
 
-**Rezultat testa:** ✅ Uspešno  
+**Rezultat testa:**  Uspešno  
 
 ---
 
-### 💳 Testni scenarij 2: Nakup vstopnic
+### Testni scenarij 2: Nakup vstopnic
 **ID:** ticket02  
 **Namen:** Preveriti pravilno delovanje nakupa vstopnic  
 
@@ -44,11 +44,11 @@
 - Sistem prikaže sporočilo »Your ticket is booked«  
 
 
-**Rezultat testa:** ✅ Uspešno  
+**Rezultat testa:**  Uspešno  
 
 ---
 
-### 📧 Testni scenarij 3: Pošiljanje sporočila
+### Testni scenarij 3: Pošiljanje sporočila
 **ID:** mail03  
 **Namen:** Preveriti uspešno pošiljanje emaila
 
@@ -65,4 +65,4 @@
 - Sistem prikaže sporočilo »We will contact you soon«  
 
 
-**Rezultat testa:** ✅ Uspešno 
+**Rezultat testa:**  Uspešno 
