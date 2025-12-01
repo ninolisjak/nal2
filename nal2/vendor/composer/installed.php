@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => '__root__',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '22631dc0d58f1f5e92e03c6643fb5b55a934d6d5',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '22631dc0d58f1f5e92e03c6643fb5b55a934d6d5',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -27,6 +27,18 @@
             'install_path' => __DIR__ . '/../doctrine/instantiator',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'halleck45/php-metrics' => array(
+            'dev_requirement' => true,
+            'replaced' => array(
+                0 => '*',
+            ),
+        ),
+        'halleck45/phpmetrics' => array(
+            'dev_requirement' => true,
+            'replaced' => array(
+                0 => '*',
+            ),
         ),
         'myclabs/deep-copy' => array(
             'pretty_version' => '1.13.4',
@@ -61,6 +73,15 @@
             'reference' => '4f7fd7836c6f332bb2933569e566a0d6c4cbed74',
             'type' => 'library',
             'install_path' => __DIR__ . '/../phar-io/version',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
+        'phpmetrics/phpmetrics' => array(
+            'pretty_version' => 'v2.9.1',
+            'version' => '2.9.1.0',
+            'reference' => 'e2e68ddd1543bc3f44402c383f7bccb62de1ece3',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpmetrics/phpmetrics',
             'aliases' => array(),
             'dev_requirement' => true,
         ),
